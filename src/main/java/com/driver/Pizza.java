@@ -6,6 +6,7 @@ public class Pizza {
     private Boolean isVeg;
     private String bill;
 
+
     private boolean cheeseAdded;
     private boolean toppingsAdded;
     private boolean takeAwayAdded;
@@ -18,6 +19,7 @@ public class Pizza {
         this.toppingsAdded=false;
         this.takeAwayAdded=false;
         this.billGenerated=false;
+        this.bill="";
         // your code goes here
 
         if(isVeg)
@@ -42,7 +44,7 @@ public class Pizza {
 
     public void addExtraToppings(){
         // your code goes here
-        if(!toppingsAdded){
+        if(toppingsAdded == false){
             if(isVeg)
                 this.price += 70;
             else
@@ -55,7 +57,7 @@ public class Pizza {
 
     public void addTakeaway(){
         // your code goes here
-        if(!takeAwayAdded){
+        if(takeAwayAdded == false){
             this.price += 20;
             takeAwayAdded = true;
         }
@@ -65,8 +67,8 @@ public class Pizza {
         // your code goes here
 
         //initializing variables for ouput string
-        this.bill = "";
-        if(!billGenerated) {
+
+        if(billGenerated == false) {
             billGenerated = true;
 
             int bp = 0, ca = 0, ta = 0, pp = 0;           //bp = base price, ca = cheese added, ta= topping added, pp= parcel price
@@ -84,10 +86,11 @@ public class Pizza {
 
 
             if (toppingsAdded) {
-                if (isVeg)
+                if(isVeg)
                     ta = 70;
                 else
                     ta = 120;
+
                 this.bill += "Extra Toppings Added: " + ta + "\n";
             }
 
