@@ -65,6 +65,7 @@ public class Pizza {
         // your code goes here
 
         //initializing variables for ouput string
+        this.bill = "";
         if(!billGenerated) {
             billGenerated = true;
 
