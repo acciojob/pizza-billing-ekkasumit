@@ -9,6 +9,7 @@ public class Pizza {
     private boolean cheeseAdded;
     private boolean toppingsAdded;
     private boolean takeAwayAdded;
+    private boolean billGenerated;
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
@@ -16,6 +17,7 @@ public class Pizza {
         this.cheeseAdded=false;
         this.toppingsAdded=false;
         this.takeAwayAdded=false;
+        this.billGenerated=false;
         // your code goes here
 
         if(isVeg)
@@ -63,34 +65,39 @@ public class Pizza {
         // your code goes here
 
         //initializing variables for ouput string
-        int bp=0, ca=0, ta=0, pp=0;           //bp = base price, ca = cheese added, ta= topping price, pp= parcel price
-        if(isVeg)
-            bp = 300;
-        else
-            bp = 400;
+        if(!billGenerated) {
+            billGenerated = true;
 
-        this.bill += "Base Price Of The Pizza: "+bp+"\n";
-
-        if(cheeseAdded) {
-            ca = 80;
-            this.bill += "Extra Cheese Added: " + ca + "\n";
-        }
-
-
-        if(toppingsAdded){
-            if(isVeg)
-                ta =70;
+            int bp = 0, ca = 0, ta = 0, pp = 0;           //bp = base price, ca = cheese added, ta= topping price, pp= parcel price
+            if (isVeg)
+                bp = 300;
             else
-                ta = 120;
-            this.bill += "Extra Toppings Added: "+ta+"\n";
-        }
+                bp = 400;
 
-        if(takeAwayAdded) {
-            pp = 20;
-            this.bill += "Paperbag Added: " + pp + "\n";
-        }
+            this.bill += "Base Price Of The Pizza: " + bp + "\n";
 
-        this.bill += "Total Price: "+this.price+"\n";
+            if (cheeseAdded) {
+                ca = 80;
+                this.bill += "Extra Cheese Added: " + ca + "\n";
+            }
+
+
+            if (toppingsAdded) {
+                if (isVeg)
+                    ta = 70;
+                else
+                    ta = 120;
+                this.bill += "Extra Toppings Added: " + ta + "\n";
+            }
+
+            if (takeAwayAdded) {
+                pp = 20;
+                this.bill += "Paperbag Added: " + pp + "\n";
+            }
+
+            this.bill += "Total Price: " + this.price + "\n";
+
+        }
 
         return this.bill;
     }
