@@ -69,7 +69,7 @@ public class Pizza {
         else
             bp = 400;
 
-        this.bill += "Base Price of Pizza: "+bp+"\n";
+        this.bill += "Base Price Of The Pizza: "+bp+"\n";
 
         if(cheeseAdded) {
             ca = 80;
@@ -89,6 +89,8 @@ public class Pizza {
             pp = 20;
             this.bill += "Paperbag Added: " + pp + "\n";
         }
+
+        this.bill += "Total Price: "+this.price+"\n";
 
         return this.bill;
     }
