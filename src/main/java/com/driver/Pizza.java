@@ -68,7 +68,7 @@ public class Pizza {
         if(!billGenerated) {
             billGenerated = true;
 
-            int bp = 0, ca = 0, ta = 0, pp = 0;           //bp = base price, ca = cheese added, ta= topping price, pp= parcel price
+            int bp = 0, ca = 0, ta = 0, pp = 0;           //bp = base price, ca = cheese added, ta= topping added, pp= parcel price
             if (isVeg)
                 bp = 300;
             else
